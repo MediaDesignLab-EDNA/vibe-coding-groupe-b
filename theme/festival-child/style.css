@@ -1,0 +1,14 @@
+/*
+Theme Name: Les Nuits du Quai
+Template: twentytwentyfive
+Description: Thème enfant du festival fictif Les Nuits du Quai (cours Vibe coding et collaboration).
+Version: 0.1.0
+Text Domain: festival-child
+*/
+
+/* Styles complémentaires. Les couleurs et typographies sont dans theme.json. */
+
+:where(a, button, input, select, textarea):focus-visible {
+  outline: 3px solid var(--wp--preset--color--accent);
+  outline-offset: 3px;
+}

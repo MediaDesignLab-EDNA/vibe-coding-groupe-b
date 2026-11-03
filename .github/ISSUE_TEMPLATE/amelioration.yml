@@ -1,0 +1,22 @@
+name: Proposer une amélioration
+description: Une évolution du site, une demande du client
+labels: [amélioration]
+body:
+  - type: textarea
+    id: besoin
+    attributes:
+      label: Le besoin
+      description: Qui en a besoin, et pourquoi ?
+    validations:
+      required: true
+  - type: textarea
+    id: proposition
+    attributes:
+      label: Ce que vous proposez
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Comment on saura que c'est réussi
+      description: Les vérifications à faire avant de fermer le ticket

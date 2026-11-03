@@ -1,0 +1,41 @@
+name: Signaler un bug
+description: Quelque chose ne marche pas comme prévu sur le site
+labels: [bug]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page concernée
+      description: L'adresse de la page, ou son nom
+    validations:
+      required: true
+  - type: textarea
+    id: etapes
+    attributes:
+      label: Étapes pour reproduire
+      description: Ce que vous faites, dans l'ordre
+      placeholder: "1. J'ouvre la page Programme sur mon téléphone\n2. Je clique sur…"
+    validations:
+      required: true
+  - type: textarea
+    id: observe
+    attributes:
+      label: Ce qui se passe
+    validations:
+      required: true
+  - type: textarea
+    id: attendu
+    attributes:
+      label: Ce qui devrait se passer
+    validations:
+      required: true
+  - type: input
+    id: contexte
+    attributes:
+      label: Appareil, navigateur, largeur d'écran
+      placeholder: "iPhone 12, Safari / ordinateur, Chrome, 1280 px"
+  - type: textarea
+    id: capture
+    attributes:
+      label: Capture d'écran
+      description: Glissez une image ici si elle aide

@@ -1,0 +1,25 @@
+# Déploiement du thème sur le WordPress du groupe.
+# Désactivé tant que la variable DEPLOY_ENABLED n'est pas à "true" (séance 4).
+name: Déployer le thème
+on:
+  push:
+    branches: [main]
+    paths: ["theme/**"]
+jobs:
+  deploy:
+    if: vars.DEPLOY_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Écrire la version déployée
+        run: echo "${GITHUB_SHA::7}" > theme/festival-child/version.txt
+      - name: Copier le thème sur le serveur
+        env:
+          SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -H "${{ secrets.DEPLOY_HOST }}" >> ~/.ssh/known_hosts
+          rsync -az --delete theme/festival-child/ \
+            "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}/"
