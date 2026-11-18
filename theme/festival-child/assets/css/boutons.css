@@ -3,9 +3,3 @@
   border-radius: 999px;
   padding: 0.5em 1.4em;
 }
-
-.boutons-programme .wp-block-button__link:focus,
-.boutons-programme .wp-block-button__link:focus-visible {
-  outline: none;
-  box-shadow: none;
-}
