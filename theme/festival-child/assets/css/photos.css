@@ -1,5 +1,5 @@
-/* Visuels des artistes : tous à la même hauteur. */
+/* Visuels des artistes : un bandeau bas, de la même hauteur pour toutes les cartes. */
 .carte-artiste img {
   width: 100%;
-  height: 220px;
+  height: 80px;
 }

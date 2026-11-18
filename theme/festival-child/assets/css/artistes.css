@@ -1,6 +1,6 @@
 /* Cartes des artistes : un nom en grand, sur une seule ligne, pour des cartes toutes de la même hauteur. */
 .carte-artiste h3 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   line-height: 1.1;
   white-space: nowrap;
   overflow: hidden;
