@@ -1,6 +1,8 @@
 ## Ticket traité
 
-Ferme #
+Closes #
+
+<!-- Écrivez le numéro du ticket juste après le #, par exemple « Closes #2 ». Gardez le mot anglais Closes : c'est lui qui fermera le ticket à la fusion. -->
 
 ## Ce qui change
 

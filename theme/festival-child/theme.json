@@ -8,7 +8,8 @@
         { "slug": "contrast", "name": "Lune", "color": "#F4F1EA" },
         { "slug": "accent", "name": "Lampion", "color": "#FFB547" }
       ]
-    }
+    },
+    "typography": { "fluid": false }
   },
   "styles": {
     "color": {
@@ -16,7 +17,8 @@
       "text": "var(--wp--preset--color--contrast)"
     },
     "elements": {
-      "link": { "color": { "text": "var(--wp--preset--color--accent)" } }
+      "link": { "color": { "text": "var(--wp--preset--color--accent)" } },
+      "h1": { "typography": { "fontSize": "96px", "lineHeight": "1" } }
     }
   }
 }

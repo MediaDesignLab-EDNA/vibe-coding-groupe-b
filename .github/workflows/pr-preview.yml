@@ -1,0 +1,29 @@
+# Ajoute un bouton « Preview » à chaque pull request : le site du festival
+# dans WordPress Playground, avec le thème de la branche de la pull request.
+name: Aperçu de la pull request
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
+
+jobs:
+  apercu:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: WordPress/action-wp-playground-pr-preview@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          blueprint: |
+            {
+              "landingPage": "/",
+              "preferredVersions": { "php": "8.3", "wp": "latest" },
+              "steps": [
+                { "step": "setSiteLanguage", "language": "fr_FR" },
+                { "step": "installTheme", "themeData": { "resource": "wordpress.org/themes", "slug": "twentytwentyfive" }, "options": { "activate": false } },
+                { "step": "installTheme", "themeData": { "resource": "git:directory", "url": "https://github.com/${{ github.repository }}", "ref": "${{ github.head_ref }}", "refType": "branch", "path": "theme/festival-child" }, "options": { "activate": true, "targetFolderName": "festival-child" } },
+                { "step": "writeFile", "path": "/wordpress/wp-content/contenu-demo.php", "data": { "resource": "url", "url": "https://raw.githubusercontent.com/${{ github.repository }}/main/playground/contenu.php" } },
+                { "step": "runPHP", "code": "<?php require '/wordpress/wp-load.php'; require '/wordpress/wp-content/contenu-demo.php';" }
+              ]
+            }

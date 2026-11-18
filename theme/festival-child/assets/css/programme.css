@@ -1,0 +1,9 @@
+/* Programme : les horaires en retrait, pour mettre les noms des artistes en avant. */
+.programme .horaire {
+  color: #2B3648;
+  font-weight: 600;
+}
+
+.programme h3 {
+  color: var(--wp--preset--color--accent);
+}

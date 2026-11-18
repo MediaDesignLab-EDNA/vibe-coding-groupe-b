@@ -1,0 +1,19 @@
+/* Pied de page : la liste des pages sur une ligne. */
+.pied-de-page .wp-block-page-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em 1.5em;
+  list-style: none;
+  padding: 0;
+}
+
+.pied-de-page .wp-block-page-list a {
+  color: var(--wp--preset--color--contrast);
+  text-decoration: none;
+}
+
+/* Le dernier lien (Infos pratiques) est mis en avant. */
+.pied-de-page .wp-block-page-list li:last-child a {
+  color: var(--wp--preset--color--base);
+  font-weight: 700;
+}

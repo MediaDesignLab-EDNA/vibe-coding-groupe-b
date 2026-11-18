@@ -3,7 +3,7 @@
  * Thème enfant · Les Nuits du Quai
  */
 
-// Charge la feuille de styles du thème enfant.
+// Charge la feuille de styles du thème enfant, puis une feuille par partie du site (assets/css/).
 add_action( 'wp_enqueue_scripts', function () {
 	wp_enqueue_style(
 		'festival-child',
@@ -11,6 +11,16 @@ add_action( 'wp_enqueue_scripts', function () {
 		array(),
 		wp_get_theme()->get( 'Version' )
 	);
+
+	foreach ( glob( get_stylesheet_directory() . '/assets/css/*.css' ) as $fichier ) {
+		$nom = basename( $fichier, '.css' );
+		wp_enqueue_style(
+			'festival-' . $nom,
+			get_stylesheet_directory_uri() . '/assets/css/' . $nom . '.css',
+			array( 'festival-child' ),
+			filemtime( $fichier )
+		);
+	}
 } );
 
 // Affiche en bas de page la version du thème réellement en ligne (écrite par le déploiement).

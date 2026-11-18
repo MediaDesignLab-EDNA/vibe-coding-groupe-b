@@ -1,0 +1,21 @@
+/* Menu principal : toujours affiché en entier, sur une seule ligne, sans bouton « menu ». */
+.wp-block-navigation__responsive-container-open,
+.wp-block-navigation__responsive-container-close {
+  display: none !important;
+}
+
+.wp-block-navigation__responsive-container:not(.is-menu-open) {
+  display: flex !important;
+  position: static;
+  background: transparent;
+}
+
+.wp-block-navigation,
+.wp-block-navigation__responsive-container,
+.wp-block-navigation__responsive-container-content,
+.wp-block-navigation .wp-block-navigation__container,
+.wp-block-navigation .wp-block-page-list {
+  flex-shrink: 0;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
