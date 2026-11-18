@@ -18,7 +18,7 @@
     },
     "elements": {
       "link": { "color": { "text": "var(--wp--preset--color--accent)" } },
-      "h1": { "typography": { "fontSize": "96px", "lineHeight": "1" } }
+      "h1": { "typography": { "fontSize": "clamp(2.25rem, 12vw, 6rem)", "lineHeight": "1.1" } }
     }
   }
 }
