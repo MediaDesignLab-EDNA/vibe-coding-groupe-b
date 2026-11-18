@@ -10,7 +10,7 @@ Le lien ouvre le site dans **WordPress Playground** : un WordPress complet qui t
 
 - Le site montre toujours l'état de la branche `main`. Après une fusion, rouvrez le lien pour voir la correction.
 - Chaque pull request a aussi son bouton **Preview** : le site avec la correction, avant la fusion.
-- C'est provisoire : ce que vous changez dans Playground n'est pas gardé. On corrige dans le dépôt, jamais dans Playground.
+- C'est un brouillon : chaque ouverture du lien recrée le site à partir du dépôt, et ce que vous changez dans Playground ne va pas dans le dépôt. On corrige dans le dépôt, jamais dans Playground.
 - En séance 4, le site aura sa propre adresse, sur un vrai serveur.
 
 ## Le site
