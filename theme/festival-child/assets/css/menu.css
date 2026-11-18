@@ -1,4 +1,4 @@
-/* Menu principal : toujours affiché en entier, sur une seule ligne, sans bouton « menu ». */
+/* Menu principal : reste dans la largeur de l’écran et passe sur plusieurs lignes si nécessaire. */
 .wp-block-navigation__responsive-container-open,
 .wp-block-navigation__responsive-container-close {
   display: none !important;
@@ -7,6 +7,7 @@
 .wp-block-navigation__responsive-container:not(.is-menu-open) {
   display: flex !important;
   position: static;
+  max-width: 100%;
   background: transparent;
 }
 
@@ -15,13 +16,15 @@
 .wp-block-navigation__responsive-container-content,
 .wp-block-navigation .wp-block-navigation__container,
 .wp-block-navigation .wp-block-page-list {
-  flex-shrink: 0;
-  flex-wrap: nowrap;
-  white-space: nowrap;
+  min-width: 0;
+  max-width: 100%;
+  flex-shrink: 1;
+  flex-wrap: wrap;
+  white-space: normal;
 }
 
-/* Des liens bien espacés. */
+/* Des liens bien espacés, avec retour à la ligne sur les petits écrans. */
 .wp-block-navigation .wp-block-navigation__container,
 .wp-block-navigation .wp-block-page-list {
-  gap: 2em;
+  gap: 0.5em 2em;
 }
