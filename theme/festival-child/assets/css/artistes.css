@@ -5,3 +5,11 @@
   white-space: nowrap;
   overflow: hidden;
 }
+
+/* Sur la page Artistes, un titre plus compact pour rester lisible sur téléphone. */
+@media (max-width: 600px) {
+  body:has(.carte-artiste) .wp-block-post-title {
+    font-size: 2rem;
+    line-height: 1.1;
+  }
+}
